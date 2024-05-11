@@ -1,0 +1,31 @@
+* {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+.player{
+    border: 1px solid black;
+    width: 40%;
+    padding:1em;
+    margin-top: 2em;
+    border-radius: 1em;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+}
+
+#players-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.centered{
+    text-align: center;
+}
+
+.confirmChangeButton{
+    display: block;
+    margin-top: 1em;
+}
