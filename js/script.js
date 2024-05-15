@@ -19,9 +19,13 @@ const agregarJugador = async () => {
         if (nombre === null || nombre.length === 0) {
             return;
         }
-        const edad = parseInt(prompt("Ingrese la edad del jugador:"));
-        if (isNaN(edad) || edad.length === 0) {
-            return;
+        let isAgeCorrect = false;
+        let edad;
+        while (!isAgeCorrect) {
+            edad = parseInt(prompt("Ingrese la edad del jugador:"));
+            if (!isNaN(edad)) {
+                isAgeCorrect = true;
+            }
         }
         const posicion = prompt("Ingrese la posición del jugador:");
         if (posicion === null || posicion.length === 0) {
@@ -61,7 +65,6 @@ const agregarJugador = async () => {
         console.error('Error:', error.message);
     }
 };
-
 
 // Función asíncrona para listar todos los jugadores del equipo
 const listarJugadores = async () => {
@@ -181,9 +184,12 @@ const realizarCambio = async (jugadorEntrante, jugadorSaliente) => {
 };
 
 // Función principal asíncrona que interactúa con el usuario
-const main = async () => {
+const main = async (param) => {
     try {
-        // Lógica para interactuar con el usuario y llamar a las funciones adecuadas
+        listarJugadores();
+        if (param === "agregarJugador") {
+            agregarJugador();
+        } 
     } catch (error) {
         console.error('Error:', error);
     }
